@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 /**
  * 列表项基本数据结构
  */
@@ -25,16 +25,36 @@ export function creactList(len = 10) {
 
 export const useThrottle = (value, delay) => {
   const [state, setThrottle] = useState(value)
+  let timer = useRef(null);
+
   useEffect(() => {
-    let timer = null;
     if (!timer) {
-      timer = setTimeout(() => {
-        setThrottle(state)
+      timer.current = setTimeout(() => {
+        setThrottle(value)
       }, delay);
     }
     return () => {
-      clearTimeout(timer)
+      clearTimeout(timer);
     }
-  }, [value]);
+  }, [value, delay]);
   return state
+}
+
+
+export const throttle = (fn, delay = 200) => {
+  let timer = null;
+  let flag = false;
+
+  return () => {
+    if (flag || timer) {
+      // 跳过
+    } else {
+      flag = true;
+      timer = setTimeout(() => {
+        fn();
+        timer = null;
+        flag = false;
+      }, delay);
+    }
+  }
 }
