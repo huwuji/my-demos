@@ -1,0 +1,46 @@
+Arguments: 
+  /usr/local/bin/node /Users/zhangneng/.yarn/bin/yarn.js add babel-parse -D
+
+PATH: 
+  /Users/zhangneng/Library/pnpm:/Users/zhangneng/.yarn/bin:/Users/zhangneng/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/babel-parse: Not found
+      at Request.params.callback [as _callback] (/Users/zhangneng/.yarn/lib/cli.js:66830:18)
+      at Request.self.callback (/Users/zhangneng/.yarn/lib/cli.js:140464:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/Users/zhangneng/.yarn/lib/cli.js:141436:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/Users/zhangneng/.yarn/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "minipack-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
